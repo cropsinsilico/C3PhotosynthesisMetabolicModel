@@ -1,0 +1,26 @@
+
+---
+
+model:
+  - name: MatlabSaM
+    driver: ModelDriver
+    args:
+      - matlab
+      - -nodisplay 
+      - -nosplash 
+      - -nodesktop 
+      - -r 
+      - run('src/SaM.m');
+
+inputs:
+  - name: input1
+    driver: FileInputDriver
+    args: ./Input/MeM_input.txt
+  - name: static
+    driver: FileInputDriver
+    args: ./Input/MeM_static.txt
+
+outputs:
+  - name: output
+    driver: FileOutputDriver
+    args: ./Output/MeM_output.txt
