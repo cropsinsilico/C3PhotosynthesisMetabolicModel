@@ -1,34 +1,10 @@
 function CMr = CM_Rate(t,CM_Con, SUCS_Param)
 global CO2_cond;
-global Vfactor;
-
-if CO2_cond>0.0107
-Vfactor121=Vfactor(1);
-Vfactor59=Vfactor(2);
-Vfactor51=Vfactor(4);
-Vfactor23=Vfactor(5);
-Vfactor21=Vfactor(6);
-Vfactor3=Vfactor(7);
-Vfactor123=Vfactor(8);
-Vfactor113=Vfactor(9);
-Vfactor131=Vfactor(10);
-Vfactor124=Vfactor(12);
-Vfactor25=Vfactor(13);
-Vfactor54=Vfactor(14);
-Vfactor2=Vfactor(15);
-Vfactor112=Vfactor(16);
-Vfactor13=Vfactor(17);
-Vfactor11=Vfactor(18);
-Vfactor1=Vfactor(19);
-Vfactor12=Vfactor(20);
-Vfactor122=Vfactor(21);
-%Vfactor23=Vfactor(22);
-Vfactor57=Vfactor(23);
-Vfactor56=Vfactor(24);
-Vfactor7=Vfactor(25);
-Vfactor50=Vfactor(26);
-Vfactor5=Vfactor(27);
-else
+global VfactorC;
+global VfactorT;
+global GRNC;
+global GRNT;
+global Tp;
 Vfactor121=1;
 Vfactor59=1;
 Vfactor51=1;
@@ -53,15 +29,91 @@ Vfactor56=1;
 Vfactor7=1;
 Vfactor50=1;
 Vfactor5=1;
+if GRNC==1
+if CO2_cond>0.0107
+Vfactor121=VfactorC(1);
+Vfactor59=VfactorC(2);
+Vfactor51=VfactorC(4);
+Vfactor23=VfactorC(5);
+Vfactor21=VfactorC(6);
+Vfactor3=VfactorC(7);
+Vfactor123=VfactorC(8);
+Vfactor113=VfactorC(9);
+Vfactor131=VfactorC(10);
+Vfactor124=VfactorC(12);
+Vfactor25=VfactorC(13);
+Vfactor54=VfactorC(14);
+Vfactor2=VfactorC(15);
+Vfactor112=VfactorC(16);
+Vfactor13=VfactorC(17);
+Vfactor11=VfactorC(18);
+Vfactor1=VfactorC(19);
+Vfactor12=VfactorC(20);
+Vfactor122=VfactorC(21);
+%Vfactor23=VfactorC(22);
+Vfactor57=VfactorC(23);
+Vfactor56=VfactorC(24);
+Vfactor7=VfactorC(25);
+Vfactor50=VfactorC(26);
+Vfactor5=VfactorC(27);
+end
+end
 
-% % Vfactor21=1;
-% % Vfactor2=1;
-% % Vfactor123=1;
-% % Vfactor23=1;
-% % Vfactor131=1;
-% % Vfactor121=1;
-% % %Vfactor131=1;
-% % Vfactor1=1;
+Vf_T52=1;
+Vf_T5=1;
+Vf_T23=1;
+Vf_T13=1;
+Vf_T131=1;
+Vf_T25=1;
+Vf_T113=1;
+Vf_T123=1;
+Vf_T121=1;
+Vf_T3=1;
+Vf_T122=1;
+Vf_T59=1;
+Vf_T57=1;
+Vf_T12=1;
+Vf_T4=1;
+Vf_T6=1;
+Vf_T51=1;
+Vf_T53=1;
+Vf_T54=1;
+Vf_T2=1;
+Vf_T112=1;
+Vf_T11=1;
+Vf_T1=1;
+Vf_T9=1;
+%Vf_T23=1;
+Vf_T56=1;
+if GRNT==1
+if Tp>25
+Vf_T52=VfactorT(1);
+Vf_T5=VfactorT(2);
+Vf_T23=VfactorT(3);
+Vf_T13=VfactorT(4);
+Vf_T131=VfactorT(5);
+Vf_T25=VfactorT(6);
+Vf_T113=VfactorT(7);
+Vf_T123=VfactorT(8);
+Vf_T121=VfactorT(9);
+Vf_T3=VfactorT(10);
+Vf_T122=VfactorT(12);
+Vf_T59=VfactorT(13);
+Vf_T57=VfactorT(14);
+Vf_T12=VfactorT(15);
+Vf_T4=VfactorT(16);
+Vf_T6=VfactorT(17);
+Vf_T51=VfactorT(18);
+Vf_T53=VfactorT(20);
+Vf_T54=VfactorT(21);
+Vf_T2=VfactorT(22);
+Vf_T112=VfactorT(23);
+Vf_T11=VfactorT(24);
+Vf_T1=VfactorT(25);
+Vf_T9=VfactorT(26);
+%Vf_T23=VfactorT(27);
+Vf_T56=VfactorT(28);
+end
 end
 global LI;
 global Jmax;
@@ -70,7 +122,6 @@ global fc;
 global Theta;
 global beta;
 
-global Tp;
 % The global constant used for conservation law
 
 global PS_C_CA;             %   Global constant for the total adenylates
@@ -207,23 +258,23 @@ global FIBF_PSPR_com;
 %global DPH;
 global ATPActive;
 
-PsV1_0	=	V1*Vfactor1	;	%	1	Rubisco	RuBP+CO2<->2PGA
-PsV2_0	=	V2*Vfactor2 ;	%	2	PGA Kinase	PGA+ATP <-> ADP + DPGA
-PsV3_0	=	V3*Vfactor3	;	%	3	GAP dehydragenase	DPGA+NADPH <->GAP + OP+NADP 
-PsV4	=	V4	;	%	4	Triose phosphate isomerase	DHAP <->GAP
-PsV5_0	=	V5*Vfactor5	;	%	5	Aldolase	GAP+DHAP <->FBP
-PsV6_0	=	V6	;	%	6	FBPase	FBP<->F6P+OP
+PsV1_0	=	V1*Vfactor1*Vf_T1	;	%	1	Rubisco	RuBP+CO2<->2PGA
+PsV2_0	=	V2*Vfactor2*Vf_T2 ;	%	2	PGA Kinase	PGA+ATP <-> ADP + DPGA
+PsV3_0	=	V3*Vfactor3*Vf_T3	;	%	3	GAP dehydragenase	DPGA+NADPH <->GAP + OP+NADP 
+PsV4	=	V4*Vf_T4	;	%	4	Triose phosphate isomerase	DHAP <->GAP
+PsV5_0	=	V5*Vfactor5*Vf_T5;	%	5	Aldolase	GAP+DHAP <->FBP
+PsV6_0	=	V6*Vf_T6	;	%	6	FBPase	FBP<->F6P+OP
 PsV7_0	=	V7*Vfactor7	;	%	7	Transketolase	F6P+GAP<->E4P+Xu5P
-PsV8_0	=	V8*Vfactor5	;	%	8	Aldolase	E4P+DHAP<->SBP
-PsV9_0	=	V9	;	%	9	SBPase	SBP<->S7P+OP
+PsV8_0	=	V8*Vfactor5*Vf_T5	;	%	8	Aldolase	E4P+DHAP<->SBP
+PsV9_0	=	V9*Vf_T9	;	%	9	SBPase	SBP<->S7P+OP
 PsV10_0	=	V10*Vfactor7	;	%	10	Transketolase	S7P+GAP<->Ri5P+Xu5P
-PsV11	=	V11*Vfactor11	;	%	11	Pentosephosphate isomerase	Ri5P<-->Ru5P
-PsV12	=	V12*Vfactor12	;	%	12	Pentosephosphate epimerase	Xu5P<-->Ru5P
-PsV13_0	=	V13*Vfactor13;	%	13	Ribulosebiphosphate kinase	Ru5P+ATP<->RuBP+ADP
+PsV11	=	V11*Vfactor11*Vf_T11	;	%	11	Pentosephosphate isomerase	Ri5P<-->Ru5P
+PsV12	=	V12*Vfactor12*Vf_T12	;	%	12	Pentosephosphate epimerase	Xu5P<-->Ru5P
+PsV13_0	=	V13*Vfactor13*Vf_T13;	%	13	Ribulosebiphosphate kinase	Ru5P+ATP<->RuBP+ADP
 PsV16	=	V16	;	%	16	ATP synthase	ADP+Pi<->ATP
 PsV21	=	V21*Vfactor21	;	%	21	Hexose phosphate isomerase	F6P<->G6P
 PsV22	=	V22	;	%	22	Phosphoglucomutase	G6P<->G1P
-PsV23_0	=	V23*Vfactor23;%	23	ADP-glucose pyrophosphorylase and	ADPG+Gn<->G(n+1)+ADP
+PsV23_0	=	V23*Vfactor23*Vf_T23;%	23	ADP-glucose pyrophosphorylase and	ADPG+Gn<->G(n+1)+ADP
 PsV31	=	V31 ;	%	31	Phosphate translocator	DHAPi<->DHAPo
 PsV32	=	V32	;	%	32	Phosphate translocator	PGAi<->PGAo
 PsV33	=	V33	;	%	33	Phosphate translocator	GAPi<->GAPo
@@ -241,13 +292,13 @@ global V1T;
 global V2T;
 
 PrV111_0 = V111;
-PrV112_0 = V112*Vfactor112;
-PrV113_0 = V113*Vfactor113;
-PrV121_0 = V121*Vfactor121;
-PrV122_0 = V122*Vfactor122;
-PrV123_0 = V123*Vfactor123;
+PrV112_0 = V112*Vfactor112*Vf_T112;
+PrV113_0 = V113*Vfactor113*Vf_T113;
+PrV121_0 = V121*Vfactor121*Vf_T121;
+PrV122_0 = V122*Vfactor122*Vf_T122;
+PrV123_0 = V123*Vfactor123*Vf_T123;
 PrV124_0 = V124*Vfactor124;
-PrV131_0 = V131*Vfactor131;
+PrV131_0 = V131*Vfactor131*Vf_T131;
 PrV1T = V1T;
 PrV2T = V2T;
 
@@ -262,13 +313,13 @@ global  V60;
 global  V61;
 global	V62;	
 
-SUCSV51_0	=	V51*Vfactor51	;	%	;		DHAP+GAP --FBP
-SUCSV52_0	=	V52	;	%	;		FBP --F6P + Pi
+SUCSV51_0	=	V51*Vfactor51*Vf_T51	;	%	;		DHAP+GAP --FBP
+SUCSV52_0	=	V52*Vf_T52	;	%	;		FBP --F6P + Pi
 SUCSV55_0	=	V55	;	%	;		G1P+UTP --OPOP+UDPG 
-SUCSV56_0	=	V56*Vfactor56	;	%	;		UDPG+F6P--SUCP + UDP
-SUCSV57_0	=	V57*Vfactor57	;	%	;		SUCP--Pi + SUC
+SUCSV56_0	=	V56*Vfactor56*Vf_T56	;	%	;		UDPG+F6P--SUCP + UDP
+SUCSV57_0	=	V57*Vfactor57*Vf_T57	;	%	;		SUCP--Pi + SUC
 SUCSV58_0	=	V58	;	%	;		F26BP--F6P + Pi
-SUCSV59	=	V59*Vfactor59	;	%	;		F6P + ATP --ADP + F26BP
+SUCSV59	=	V59*Vfactor59*Vf_T59	;	%	;		F6P + ATP --ADP + F26BP
 SUCSV60	=	V60	;	%	;		ATP+UDP --UTP + ADP
 SUCSV61	=	V61	;	%	;		POPO --2PO
 SUCSV62	=	V62	;	%	;		SUC Sink
