@@ -15,10 +15,13 @@ model:
 inputs:
   - name: input1
     driver: FileInputDriver
-    args: ./Input/MeM_input.txt
-  - name: static
+    args: ./Input/MeM_inputC.txt
+  - name: input2
     driver: FileInputDriver
-    args: ./Input/MeM_static.txt
+    args: ./Input/MeM_inputT.txt
+  - name: input3
+    driver: FileInputDriver
+    args: ./Input/MeM_inputE.txt
 
 outputs:
   - name: output

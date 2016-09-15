@@ -20,11 +20,11 @@
 % This is the function to output the different graphs from the simulation
 
 function OUTSUC = CM_OUT(Tt, d)
-% global outA;
-% global outM;
+global outA;
+global outM;
 global PS_VEL;
 global PR_VEL;
-global TandArate;
+global TandArateout;
 global Arate;
 % Get the concentration 
 % figure;
@@ -114,6 +114,7 @@ NetCarbon = CarbonRate' - CO2Release;
 TandArate(1,:)=PS_VEL(1,:);
 TandArate(2,:)=NetCarbon;
 TandArate=TandArate';
+TandArateout=TandArate;
 %dlmwrite('A_Meta2.txt',TandArate,'delimiter',' ','precision', '%.3f');
 [row2,col2]=size(TandArate);
 Arate=TandArate(row2,2);

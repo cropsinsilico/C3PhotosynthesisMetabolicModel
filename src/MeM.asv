@@ -14,11 +14,12 @@ import PsiInterface.*
     Input1 = in1.recv()
     Input2 = in2.recv()
     Input3 = in3.recv()
+    Static = st.recv()
     
     global Arate;
     global TandArateout;
 
-    MeM_model(Input1, Input2,Input3);
+    MeM_model(Input, Static);
 
     Outdata = num2str(Arate);
     %Outdata = num2str(TandArateout);
