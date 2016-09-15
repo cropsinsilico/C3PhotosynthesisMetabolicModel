@@ -1,31 +1,31 @@
 DEBUG:PsiRun in /home/ubuntu/PSI/Cis_Repository/Models_AMQP/MeM with path ['/home/ubuntu/PSI/Cis_Repository/RMQ-support/interface', '/home/ubuntu/PSI/Cis_Repository/RMQ-support/interface', '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers', '/home/ubuntu/PSI/Cis_Repository/Models_AMQP/MeM', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-x86_64-linux-gnu', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PILcompat', '/usr/lib/python2.7/dist-packages/gtk-2.0']
 DEBUG:MeM.yml
-DEBUG:{'inputs': [{'args': './Input/MeM_inputC.txt', 'driver': 'FileInputDriver', 'name': 'input1'}, {'args': './Input/MeM_inputT.txt', 'driver': 'FileInputDriver', 'name': 'input2'}, {'args': './Input/MeM_inputE.txt', 'driver': 'FileInputDriver', 'name': 'input3'}], 'model': [{'args': ['matlab', '-nodisplay', '-nosplash', '-nodesktop', '-r', "run('src/MeM.m');"], 'driver': 'ModelDriver', 'name': 'MatlabSaM'}], 'outputs': [{'args': './Output/MeM_output.txt', 'driver': 'FileOutputDriver', 'name': 'output'}]}
+DEBUG:{'inputs': [{'args': './Input/MeM_input1.txt', 'driver': 'FileInputDriver', 'name': 'input1'}, {'args': './Input/MeM_input2.txt', 'driver': 'FileInputDriver', 'name': 'input2'}, {'args': './Input/MeM_input3.txt', 'driver': 'FileInputDriver', 'name': 'input3'}], 'model': [{'args': ['matlab', '-nodisplay', '-nosplash', '-nodesktop', '-r', "run('src/MeM.m');"], 'driver': 'ModelDriver', 'name': 'MatlabSaM'}], 'outputs': [{'args': './Output/MeM_output.txt', 'driver': 'FileOutputDriver', 'name': 'output'}]}
 DEBUG:RunModels::run()
 DEBUG:creating output, a FileOutputDriver
-DEBUG:loaded <module 'FileOutputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileOutputDriver.pyc'>
+DEBUG:loaded <module 'FileOutputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileOutputDriver.py'>
 DEBUG:FileOutput(output)
 DEBUG:Driver()
 INFO:IODriver(output)
-INFO:IODriver(output): mq handle 27239 into env[output_OUT]
+INFO:IODriver(output): mq handle 844
 DEBUG:creating input1, a FileInputDriver
-DEBUG:loaded <module 'FileInputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileInputDriver.pyc'>
+DEBUG:loaded <module 'FileInputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileInputDriver.py'>
 DEBUG:FileInput(input1)
 DEBUG:Driver()
 INFO:IODriver(input1)
-INFO:IODriver(input1): mq handle 7017 into env[input1_IN]
+INFO:IODriver(input1): mq handle 9869
 DEBUG:creating input2, a FileInputDriver
-DEBUG:loaded <module 'FileInputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileInputDriver.pyc'>
+DEBUG:loaded <module 'FileInputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileInputDriver.py'>
 DEBUG:FileInput(input2)
 DEBUG:Driver()
 INFO:IODriver(input2)
-INFO:IODriver(input2): mq handle 1438 into env[input2_IN]
+INFO:IODriver(input2): mq handle 9865
 DEBUG:creating input3, a FileInputDriver
-DEBUG:loaded <module 'FileInputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileInputDriver.pyc'>
+DEBUG:loaded <module 'FileInputDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/FileInputDriver.py'>
 DEBUG:FileInput(input3)
 DEBUG:Driver()
 INFO:IODriver(input3)
-INFO:IODriver(input3): mq handle 17262 into env[input3_IN]
+INFO:IODriver(input3): mq handle 22622
 DEBUG:creating MatlabSaM, a ModelDriver
 DEBUG:loaded <module 'ModelDriver' from '/home/ubuntu/PSI/Cis_Repository/RMQ-support/drivers/ModelDriver.pyc'>
 DEBUG:Driver()
@@ -114,9 +114,7 @@ DEBUG:FileInput(input3):send returned
 DEBUG:FileOutput(output):run in /home/ubuntu/PSI/Cis_Repository/Models_AMQP/MeM
 INFO:PsiRun(): ALL DRIVERS STARTED
 INFO:IODriver(output)::recv:  call posix receive
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
+DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 139654614841088)>
 [?1h=
                             < M A T L A B (R) >
                   Copyright 1984-2015 The MathWorks, Inc.
@@ -127,14 +125,9 @@ DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
 To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
  
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
 
 	Academic License
 
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
 INFO:IODriver(output)::recv posix received 6 bytes, id 1
 DEBUG:FileOutput(output):recvd 6 bytes
 DEBUG:FileOutput(output):write 6 bytes
@@ -222,39 +215,34 @@ Input3 =
     280	2000	25	1	0
     
 
-DEBUG:PsiRun: runAll: joining <ModelDriver(MatlabSaM, started 140057295202048)>
 [?1l>DEBUG:PythonModelDriver::done
-DEBUG:PsiRun: join(<ModelDriver(MatlabSaM, stopped 140057295202048)>): finished
+DEBUG:PsiRun: runAll: join(<ModelDriver(MatlabSaM, stopped 139654614841088)>) returns
 INFO:PsiRun(): MODELS DONE
-DEBUG:PsiRun: runAll: stopping <FileInputDriver(input1, stopped 140057286809344)>
-DEBUG:PsiRun: runAll: stop(<FileInputDriver(input1, stopped 140057286809344)>) returns
-DEBUG:PsiRun: runAll: stopping <FileInputDriver(input2, stopped 140057286809344)>
-DEBUG:PsiRun: runAll: stop(<FileInputDriver(input2, stopped 140057286809344)>) returns
-DEBUG:PsiRun: runAll: stopping <FileInputDriver(input3, stopped 140057205798656)>
-DEBUG:PsiRun: runAll: stop(<FileInputDriver(input3, stopped 140057205798656)>) returns
-DEBUG:PsiRun: runAll: stopping <FileOutputDriver(output, stopped 140057286809344)>
+DEBUG:PsiRun: runAll: stopping <FileInputDriver(input1, stopped 139654606448384)>
+DEBUG:PsiRun: runAll: stop(<FileInputDriver(input1, stopped 139654606448384)>) returns
+DEBUG:PsiRun: runAll: stopping <FileInputDriver(input2, stopped 139654598055680)>
+DEBUG:PsiRun: runAll: stop(<FileInputDriver(input2, stopped 139654598055680)>) returns
+DEBUG:PsiRun: runAll: stopping <FileInputDriver(input3, stopped 139654606448384)>
+DEBUG:PsiRun: runAll: stop(<FileInputDriver(input3, stopped 139654606448384)>) returns
+DEBUG:PsiRun: runAll: stopping <FileOutputDriver(output, stopped 139654598055680)>
 DEBUG:FileOutput(output):stop
 INFO:IODriver(output)::stop()
 DEBUG:FileOutput(output):stop returns
-DEBUG:PsiRun: runAll: stop(<FileOutputDriver(output, stopped 140057286809344)>) returns
+DEBUG:PsiRun: runAll: stop(<FileOutputDriver(output, stopped 139654598055680)>) returns
 INFO:PsiRun(): STOPS DONE
-DEBUG:PsiRun: runAll: joining <FileInputDriver(input1, stopped 140057286809344)>
-DEBUG:PsiRun: runAll: join(<FileInputDriver(input1, stopped 140057286809344)>) returns
-DEBUG:PsiRun: runAll: joining <FileInputDriver(input2, stopped 140057286809344)>
-DEBUG:PsiRun: runAll: join(<FileInputDriver(input2, stopped 140057286809344)>) returns
-DEBUG:PsiRun: runAll: joining <FileInputDriver(input3, stopped 140057205798656)>
-DEBUG:PsiRun: runAll: join(<FileInputDriver(input3, stopped 140057205798656)>) returns
-DEBUG:PsiRun: runAll: joining <FileOutputDriver(output, stopped 140057286809344)>
-DEBUG:PsiRun: runAll: join(<FileOutputDriver(output, stopped 140057286809344)>) returns
+DEBUG:PsiRun: runAll: joining <FileInputDriver(input1, stopped 139654606448384)>
+DEBUG:PsiRun: runAll: join(<FileInputDriver(input1, stopped 139654606448384)>) returns
+DEBUG:PsiRun: runAll: joining <FileInputDriver(input2, stopped 139654598055680)>
+DEBUG:PsiRun: runAll: join(<FileInputDriver(input2, stopped 139654598055680)>) returns
+DEBUG:PsiRun: runAll: joining <FileInputDriver(input3, stopped 139654606448384)>
+DEBUG:PsiRun: runAll: join(<FileInputDriver(input3, stopped 139654606448384)>) returns
+DEBUG:PsiRun: runAll: joining <FileOutputDriver(output, stopped 139654598055680)>
+DEBUG:PsiRun: runAll: join(<FileOutputDriver(output, stopped 139654598055680)>) returns
 INFO:PsiRun(): IOS DONE
 DEBUG:RunModels::run() returns
-DEBUG:Driver~()
 DEBUG:main returns
 DEBUG:FileInput(input3):~
-INFO:IODriver~(input3)
 DEBUG:FileInput(input2):~
-INFO:IODriver~(input2)
 DEBUG:FileInput(input1):~
-INFO:IODriver~(input1)
+DEBUG:Driver~()
 DEBUG:FileOutput(output):~
-INFO:IODriver~(output)
