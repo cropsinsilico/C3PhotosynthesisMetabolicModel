@@ -6,7 +6,7 @@ Linux:
 ----------------------------------------------------------------------------------------------------------
 Method 1: Using a bash script
 cd to the MeM/ directory
-. ../../raila/Plants_in_Silico/RMQ-support/interface/setup.sh
+. ../../RMQ-support/interface/setup.sh
 PsiRun.py SaM_Matlab.yml > ./Output/SaM_log.txt
 
 ----------------------------------------------------------------------------------------------------------
