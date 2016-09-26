@@ -6,10 +6,10 @@ end
 
 import PsiInterface.*
 
-    in1 = py.PsiInterface.PsiInput('input1');
-    in2 = py.PsiInterface.PsiInput('input2');
-    in3 = py.PsiInterface.PsiInput('input3');  
-    out = py.PsiInterface.PsiOutput('output');
+    in1 = py.PsiInterface.PsiInput('MeM_input1');
+    in2 = py.PsiInterface.PsiInput('MeM_input2');
+    in3 = py.PsiInterface.PsiInput('MeM_input3');  
+    out = py.PsiInterface.PsiOutput('MeM_output');
 
     Input1 = in1.recv()
     Input2 = in2.recv()
