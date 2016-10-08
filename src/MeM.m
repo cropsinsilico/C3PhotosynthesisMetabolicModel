@@ -19,9 +19,9 @@ import PsiInterface.*
     global TandArateout;
 
     MeM_model(Input1, Input2,Input3);
-
+    
     Outdata = num2str(Arate);
-    %Outdata = num2str(TandArateout);
+    % Outdata = num2str(TandArateout);
 
     sOutput = sprintf(Outdata);
     out.send(sOutput);
