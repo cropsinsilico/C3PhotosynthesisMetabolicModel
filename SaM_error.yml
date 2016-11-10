@@ -1,0 +1,29 @@
+
+---
+
+model:
+  - name: MatlabSaM
+    driver: ModelDriver
+    args:
+      - matlab
+      - -nodisplay 
+      - -nosplash 
+      - -nodesktop 
+      - -r 
+      - run('src/SaM_error.m');
+
+inputs:
+  - name: input1
+    driver: FileInputDriver
+    args: ./Input/MeM_input1.txt
+  - name: input2
+    driver: FileInputDriver
+    args: ./Input/MeM_input2.txt
+  - name: input3
+    driver: FileInputDriver
+    args: ./Input/MeM_input3.txt
+
+outputs:
+  - name: output
+    driver: FileOutputDriver
+    args: ./Output/MeM_output.txt
