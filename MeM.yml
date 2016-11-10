@@ -10,7 +10,7 @@ model:
       - -nosplash 
       - -nodesktop 
       - -r 
-      - run('src/MeM.m');
+      - run('src/MeM_alone.m');
 
 inputs:
   - name: input1
