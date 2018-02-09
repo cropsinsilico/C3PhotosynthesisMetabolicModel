@@ -2,7 +2,7 @@
 ---
 
 model:
-  - name: MatlabSaM
+  - name: MatlabMeM
     driver: ModelDriver
     args:
       - matlab
@@ -13,15 +13,9 @@ model:
       - run('src/MeM_alone.m');
 
 inputs:
-  - name: input1
+  - name: input
     driver: FileInputDriver
-    args: ./Input/MeM_input1.txt
-  - name: input2
-    driver: FileInputDriver
-    args: ./Input/MeM_input2.txt
-  - name: input3
-    driver: FileInputDriver
-    args: ./Input/MeM_input3.txt
+    args: ./Input/MeM_input.txt
 
 outputs:
   - name: output
