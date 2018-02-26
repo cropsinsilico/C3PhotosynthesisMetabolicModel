@@ -1,0 +1,2 @@
+CO2	light	Temp	GRNC	GRNT
+280	2000	25	1	0
