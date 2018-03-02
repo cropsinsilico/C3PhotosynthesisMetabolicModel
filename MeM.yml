@@ -1,29 +1,29 @@
 
 ---
 
-model:
-  - name: MatlabSaM
-    driver: ModelDriver
-    args:
-      - matlab
-      - -nodisplay 
-      - -nosplash 
-      - -nodesktop 
-      - -r 
-      - run('src/MeM_alone.m');
+models:
+  - name: MeM
+    driver: MatlabModelDriver
+    args: ./src/MeM_alone.m
 
-inputs:
-  - name: input1
-    driver: FileInputDriver
-    args: ./Input/MeM_input1.txt
-  - name: input2
-    driver: FileInputDriver
-    args: ./Input/MeM_input2.txt
-  - name: input3
-    driver: FileInputDriver
-    args: ./Input/MeM_input3.txt
+    inputs:
+      - name: input1
+        driver: AsciiTableInputDriver
+        args: ./Input/MeM_input1.txt
+        as_array: True
+      - name: input2
+        driver: AsciiTableInputDriver
+        args: ./Input/MeM_input2.txt
+        as_array: True
+      - name: input3
+        driver: AsciiTableInputDriver
+        args: ./Input/MeM_input3.txt
+        as_array: True
+      - name: light_intensity
+        driver: AsciiTableInputDriver
+        args: ./Input/MeM_light_intensity.txt
 
-outputs:
-  - name: output
-    driver: FileOutputDriver
-    args: ./Output/MeM_output.txt
+    outputs:
+      - name: output
+        driver: FileOutputDriver
+        args: ./Output/MeM_output.txt

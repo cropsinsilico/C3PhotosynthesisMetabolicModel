@@ -1,4 +1,5 @@
-Glyma_ID	Ele:Amb
+# Glyma_ID	Ele:Amb
+# %15s		%f
 Glyma.07g182300	1.043341206
 Glyma.12g153000	1.04716962
 Glyma.07g258500	0.824584372

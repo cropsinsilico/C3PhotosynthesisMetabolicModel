@@ -1,4 +1,5 @@
-Glyma_ID	Pro_ele/Amb
+# Glyma_ID	Pro_ele/Amb
+# %15s		%f
 Glyma.08G175800	0.954752885
 Glyma.02G228700	0.940338417
 Glyma.17G261700	0.999724222

@@ -1,2 +1,3 @@
-CO2	light	Temp	GRNC	GRNT
+# CO2	light	Temp	GRNC	GRNT
+# %f	%f	%f	%f	%f
 280	2000	25	1	0
