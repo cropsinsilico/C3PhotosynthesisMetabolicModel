@@ -2,11 +2,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Set up I/O Channels
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-in1 = PsiInterface('PsiAsciiArrayInput', 'input1');
-in2 = PsiInterface('PsiAsciiArrayInput', 'input2');
-in3 = PsiInterface('PsiAsciiArrayInput', 'input3');
-inLI = PsiInterface('PsiAsciiTableInput', 'light_intensity');
-out = PsiInterface('PsiOutput', 'output', '%f');
+in1 = CisInterface('CisAsciiArrayInput', 'input1');
+in2 = CisInterface('CisAsciiArrayInput', 'input2');
+in3 = CisInterface('CisAsciiArrayInput', 'input3');
+inLI = CisInterface('CisAsciiTableInput', 'light_intensity');
+out = CisInterface('CisOutput', 'output', '%f');
 disp('Done establishing I/O channels');
 
 

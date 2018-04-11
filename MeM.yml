@@ -5,25 +5,10 @@ models:
   - name: MeM
     driver: MatlabModelDriver
     args: ./src/MeM_alone.m
-
     inputs:
-      - name: input1
-        driver: AsciiTableInputDriver
-        args: ./Input/MeM_input1.txt
-        as_array: True
-      - name: input2
-        driver: AsciiTableInputDriver
-        args: ./Input/MeM_input2.txt
-        as_array: True
-      - name: input3
-        driver: AsciiTableInputDriver
-        args: ./Input/MeM_input3.txt
-        as_array: True
-      - name: light_intensity
-        driver: AsciiTableInputDriver
-        args: ./Input/MeM_light_intensity.txt
-
+      - input1
+      - input2
+      - input3
+      - light_intensity
     outputs:
-      - name: output
-        driver: FileOutputDriver
-        args: ./Output/MeM_output.txt
+      - output

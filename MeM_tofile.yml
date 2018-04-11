@@ -1,0 +1,18 @@
+
+---
+
+connections:
+  - input: ./Input/MeM_input1.txt
+    output: input1
+    read_meth: table_array
+  - input: ./Input/MeM_input2.txt
+    output: input2
+    read_meth: table_array
+  - input: ./Input/MeM_input3.txt
+    output: input3
+    read_meth: table_array    
+  - input: ./Input/MeM_light_intensity.txt
+    output: light_intensity
+    read_meth: table
+  - input: output
+    output: ./Output/MeM_output.txt

@@ -2,4 +2,4 @@
 
 # ----------------Your Commands------------------- #
 
-cisrun MeM.yml
+cisrun MeM.yml MeM_tofile.yml
