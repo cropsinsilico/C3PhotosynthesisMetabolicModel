@@ -6,9 +6,9 @@ models:
     driver: MatlabModelDriver
     args: ./src/MeM_alone.m
     inputs:
-      - input1
-      - input2
-      - input3
-      - light_intensity
+      - MeM_input1
+      - MeM_input2
+      - MeM_input3
+      - MeM_light_intensity
     outputs:
-      - output
+      - MeM_output

@@ -2,11 +2,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Set up I/O Channels
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-in1 = CisInterface('CisAsciiArrayInput', 'input1');
-in2 = CisInterface('CisAsciiArrayInput', 'input2');
-in3 = CisInterface('CisAsciiArrayInput', 'input3');
-inLI = CisInterface('CisAsciiTableInput', 'light_intensity');
-out = CisInterface('CisOutput', 'output', '%f');
+in1 = CisInterface('CisAsciiArrayInput', 'MeM_input1');
+in2 = CisInterface('CisAsciiArrayInput', 'MeM_input2');
+in3 = CisInterface('CisAsciiArrayInput', 'MeM_input3');
+inLI = CisInterface('CisAsciiTableInput', 'MeM_light_intensity');
+out = CisInterface('CisOutput', 'MeM_output', '%f');
 disp('Done establishing I/O channels');
 
 

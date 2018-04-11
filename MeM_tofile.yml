@@ -3,16 +3,16 @@
 
 connections:
   - input: ./Input/MeM_input1.txt
-    output: input1
+    output: MeM_input1
     read_meth: table_array
   - input: ./Input/MeM_input2.txt
-    output: input2
+    output: MeM_input2
     read_meth: table_array
   - input: ./Input/MeM_input3.txt
-    output: input3
+    output: MeM_input3
     read_meth: table_array    
   - input: ./Input/MeM_light_intensity.txt
-    output: light_intensity
+    output: MeM_light_intensity
     read_meth: table
-  - input: output
+  - input: MeM_output
     output: ./Output/MeM_output.txt
