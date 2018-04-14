@@ -2,33 +2,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Set up I/O Channels
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-in1 = CisInterface('CisAsciiArrayInput', 'MeM_input1');
-in2 = CisInterface('CisAsciiArrayInput', 'MeM_input2');
-in3 = CisInterface('CisAsciiArrayInput', 'MeM_input3');
-inLI = CisInterface('CisAsciiTableInput', 'MeM_light_intensity');
-out = CisInterface('CisOutput', 'MeM_output', '%f');
+in1 = CisInterface('CisInput', 'MeM_input1');
+in2 = CisInterface('CisInput', 'MeM_input2');
+in3 = CisInterface('CisInput', 'MeM_input3');
+inLI = CisInterface('CisInput', 'MeM_light_intensity');
+out = CisInterface('CisOutput', 'MeM_output', '%f\n');
 disp('Done establishing I/O channels');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Receive input 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[flag, Input1_cell] = in1.recv();
+[flag, Input1_map] = in1.recv_dict();
 if (~flag)
   disp('Error getting input1');
   exit(-1);
 end;
-Input1 = containers.Map(Input1_cell(:,1), Input1_cell(:,2));
+Input1 = containers.Map(Input1_map('Glyma_ID'), Input1_map('Ele:Amb'));
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Receive input 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[flag, Input2_cell] = in2.recv();
+[flag, Input2_map] = in2.recv_dict();
 if (~flag)
   disp('Error getting input2');
   exit(-1);
 end;
-Input2 = containers.Map(Input2_cell(:,1), Input2_cell(:,2));
+Input2 = containers.Map(Input2_map('Glyma_ID'), Input2_map('Ele:Amb'));
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Receive input 3

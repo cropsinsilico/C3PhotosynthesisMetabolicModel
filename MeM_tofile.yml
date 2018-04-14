@@ -16,3 +16,4 @@ connections:
     read_meth: table
   - input: MeM_output
     output: ./Output/MeM_output.txt
+    write_meth: table
