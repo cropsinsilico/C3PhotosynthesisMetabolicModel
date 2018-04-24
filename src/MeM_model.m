@@ -19,6 +19,7 @@ function MeM_model(input1, input2)
   for k = 1:length(order_C)
     VfactorC{k} = input1(order_C{k});
   end;
+  VfactorC = cell2mat(VfactorC);
 
   % input_data = cellstr(strsplit(char(inputfile1)));
     
@@ -137,6 +138,7 @@ function MeM_model(input1, input2)
   for k = 1:length(order_T)
     VfactorT{k} = input2(order_T{k});
   end;
+  VfactorT = cell2mat(VfactorT);
 
   % input_dataT = cellstr(strsplit(char(inputfile2)));
     

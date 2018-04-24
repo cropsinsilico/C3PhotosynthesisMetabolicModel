@@ -65,7 +65,7 @@ while flag
     GRNC = vars{4};
     GRNT = vars{5};
 
-    fprintf('Running MeM for CO2=%f, Light=%f, T=%f, GRNC=%f, GRNT=%f\n', ...
+    fprintf('Running MeM for CO2=%f, Light=%f, T=%f, GRNC=%d, GRNT=%d\n', ...
 	    CO2in, Liin, Tpin, GRNC, GRNT);
     Arate = MeM_run(Liin, CO2in, Tpin);
     fprintf('MeM(LI = %f) = %f\n', Liin, Arate);
