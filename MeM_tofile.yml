@@ -10,9 +10,6 @@ connections:
     read_meth: table_array
   - input: ./Input/MeM_input3.txt
     output: MeM_input3
-    read_meth: table_array    
-  - input: ./Input/MeM_light_intensity.txt
-    output: MeM_light_intensity
     read_meth: table
   - input: MeM_output
     output: ./Output/MeM_output.txt

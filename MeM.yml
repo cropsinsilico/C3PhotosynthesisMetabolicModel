@@ -9,7 +9,6 @@ models:
       - MeM_input1
       - MeM_input2
       - MeM_input3
-      - MeM_light_intensity
     outputs:
       - name: MeM_output
         field_names: PhotosynthesisRate

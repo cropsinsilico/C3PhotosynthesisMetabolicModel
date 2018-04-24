@@ -1,4 +1,4 @@
-function MeM_model(input1, input2, input3)
+function MeM_model(input1, input2)
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Process input 1
@@ -238,16 +238,16 @@ function MeM_model(input1, input2, input3)
   % Process input 3
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   
-  global CO2in;
-  global Tpin;
-  global GRNC;
-  global GRNT;
+  % global CO2in;
+  % global Tpin;
+  % global GRNC;
+  % global GRNT;
   
-  CO2in = input3{1};
-  Liin = input3{2};
-  Tpin = input3{3};
-  GRNC = input3{4};
-  GRNT = input3{5};
+  % CO2in = input3{1};
+  % Liin = input3{2};
+  % Tpin = input3{3};
+  % GRNC = input3{4};
+  % GRNT = input3{5};
   
   % params_data = cellstr(strsplit(char(inputfile3)));
   % params_data = deblank(params_data);

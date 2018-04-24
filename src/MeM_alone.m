@@ -5,7 +5,6 @@
 in1 = CisInterface('CisInput', 'MeM_input1');
 in2 = CisInterface('CisInput', 'MeM_input2');
 in3 = CisInterface('CisInput', 'MeM_input3');
-inLI = CisInterface('CisInput', 'MeM_light_intensity');
 out = CisInterface('CisOutput', 'MeM_output', '%f\n');
 disp('Done establishing I/O channels');
 
@@ -33,11 +32,11 @@ Input2 = containers.Map(Input2_map('Glyma_ID'), Input2_map('Ele:Amb'));
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Receive input 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[flag, Input3] = in3.recv();
-if (~flag)
-  disp('Error getting input3');
-  exit(-1);
-end;
+% [flag, Input3] = in3.recv();
+% if (~flag)
+%   disp('Error getting input3');
+%   exit(-1);
+% end;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Initialize variables independent of individual leaf segment
@@ -47,8 +46,10 @@ global Arate;
 global CO2in;
 global Tpin;
 global Liin;
+global GRNC;
+global GRNT;
 
-MeM_model(Input1, Input2, Input3);
+MeM_model(Input1, Input2);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Continue reading new light intensities for new leaf segments
@@ -56,10 +57,16 @@ MeM_model(Input1, Input2, Input3);
 
 flag = true;
 while flag
-  [flag, vars] = inLI.recv();
+  [flag, vars] = in3.recv();
   if flag
-    Liin = vars{1};
-    fprintf('Running MeM for light intensity of %f\n', Liin);
+    CO2in = vars{1};
+    Liin = vars{2};
+    Tpin = vars{3};
+    GRNC = vars{4};
+    GRNT = vars{5};
+
+    fprintf('Running MeM for CO2=%f, Light=%f, T=%f, GRNC=%f, GRNT=%f\n', ...
+	    CO2in, Liin, Tpin, GRNC, GRNT);
     Arate = MeM_run(Liin, CO2in, Tpin);
     fprintf('MeM(LI = %f) = %f\n', Liin, Arate);
     out.send(Arate);
