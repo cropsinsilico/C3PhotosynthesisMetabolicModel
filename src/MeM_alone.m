@@ -2,10 +2,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Set up I/O Channels
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-in1 = CisInterface('CisInput', 'MeM_input1');
-in2 = CisInterface('CisInput', 'MeM_input2');
-in3 = CisInterface('CisInput', 'MeM_input3');
-out = CisInterface('CisOutput', 'MeM_output', '%f\n');
+in1 = YggInterface('YggInput', 'MeM_input1');
+in2 = YggInterface('YggInput', 'MeM_input2');
+in3 = YggInterface('YggInput', 'MeM_input3');
+out = YggInterface('YggOutput', 'MeM_output', '%f\n');
 disp('Done establishing I/O channels');
 
 
